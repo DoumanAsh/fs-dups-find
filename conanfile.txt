@@ -1,0 +1,9 @@
+[requires]
+fmt/4.1.0@bincrafters/stable
+cryptopp/7.0.0@bincrafters/stable
+
+[options]
+boost:shared=False
+
+[generators]
+cmake
