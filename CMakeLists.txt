@@ -23,7 +23,7 @@ include(conan.cmake)
 set_output_dir("${CMAKE_BINARY_DIR}/dist")
 
 # Max compile warnings for own code only
-msvc_set_flags_if("/W4 /std:c++latest")
+msvc_set_flags_if("/W4 /std:c++latest /permissive-")
 gcc_set_flags_if("-Wall -Wextra")
 
 ###########################
