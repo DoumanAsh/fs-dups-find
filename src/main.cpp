@@ -12,7 +12,7 @@ namespace fs = std::filesystem;
 void get_files_digest(std::map<std::string, std::vector<std::string>>& file_hashes, fs::recursive_directory_iterator dir_it) {
     Hasher hasher;
     for (auto&& entry: dir_it) {
-        if (entry.is_regular_file()) {
+        if (!entry.is_symlink() && entry.is_regular_file()) {
             auto digest = hasher.calculate_file(entry.path().generic_string().c_str());
 
             auto existing_hash = file_hashes.find(digest);
